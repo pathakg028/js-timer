@@ -20,11 +20,16 @@ class Timer {
         console.log("duration is changed");
     }
     tick = () => {
+        if(this.timeRemaining<=0){
+            this.pause
+        }
+        else{
         this.timeRemaining = this.timeRemaining - 1;
+        }
     }
 
     get timeRemaining() {
-        return parseFloat(this.durationInput.value)
+            return parseFloat(this.durationInput.value)
     }
 
     set timeRemaining(time) {
